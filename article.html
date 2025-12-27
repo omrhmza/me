@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="articleTitle">المكتبة الأدبية | المقالة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- التوبار -->
+<nav class="topbar">
+    <!-- هذا للكمبيوتر (يبقى كما هو) -->
+    <div class="topbar-content">
+        <button class="drawer-toggle" id="drawerToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="logo">
+            <span>عمر حمزة</span>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="globalSearch" placeholder="ابحث في جميع المقالات...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="font-controls">
+            <button id="fontDecrease" title="تصغير الخط"><i class="fas fa-minus"></i></button>
+            <button id="fontReset" title="الحجم الافتراضي">أ</button>
+            <button id="fontIncrease" title="تكبير الخط"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+    
+    <!-- هذا للهاتف فقط (الجديد) -->
+    <div class="mobile-header">
+        <button class="mobile-drawer-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="mobile-logo">
+            <i class="fas fa-book-open"></i>
+            <span>Omar</span>
+        </div>
+        
+        <div class="mobile-icons">
+            <button class="mobile-font-btn" id="mobileFontBtn">
+                <i class="fas fa-text-height"></i>
+            </button>
+            <button class="mobile-search-btn" id="mobileSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- أضف هذا بعد </nav> مباشرة -->
+<div class="mobile-font-controls" id="mobileFontControls">
+    <button id="fontSmall"><i class="fas fa-minus"></i></button>
+    <button id="fontNormal">ع</button>
+    <button id="fontLarge"><i class="fas fa-plus"></i></button>
+</div>
+
+<div class="mobile-search-box" id="mobileSearchBox">
+    <input type="text" placeholder="ابحث..." id="mobileSearchInput">
+    <button id="mobileSearchGo"><i class="fas fa-search"></i></button>
+</div>
+
+    <!-- الدراور -->
+    <aside class="drawer" id="mainDrawer">
+        <div class="drawer-header">
+            <h3><i class="fas fa-tags"></i> التصنيفات</h3>
+            <button class="drawer-close" id="drawerClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="drawer-content">
+            <div class="current-tags" id="currentTagsSection">
+                <h4>تصنيف المقالة</h4>
+                <div class="tags-list" id="currentTags"></div>
+            </div>
+            
+            <div class="all-categories">
+                <h4><i class="fas fa-layer-group"></i> جميع المجالات</h4>
+                <ul class="categories-list" id="allCategories"></ul>
+            </div>
+        </div>
+    </aside>
+    
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content">
+        <!-- عناصر التحكم بالصوت -->
+        <div class="audio-controls-container hello" id="audioControlsContainer">
+            <!-- سيتم ملؤها بـ JavaScript إذا كان هناك صوت -->
+        </div>
+
+        <!-- محتوى المقالة -->
+        <article class="article-content below-paragraph" id="articleContent">
+            <!-- سيتم ملؤها بـ JavaScript -->
+        </article>
+
+        <!-- مقالات ذات صلة -->
+        <section class="related-articles hello" id="relatedArticles">
+            <b><i class="fas fa-link"></i> مقالات ذات صلة</b>
+            <hr class="section-line">
+            <div class="related-list" id="relatedList"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer toc-section">
+        <div class="footer-content">
+            <button class="btn back-btn" id="backToCategory">
+                <i class="fas fa-arrow-right"></i> العودة للمجال
+            </button>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/article.js"></script>
+</body>
+</html>
